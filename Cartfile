@@ -1,0 +1,11 @@
+github "onevcat/Kingfisher" "master"
+github "typelift/Swiftz" "master"
+github "ReactiveX/RxSwift" ~> 3.0.1
+github "Moya/Moya" "master"
+github "Thoughtbot/Argo" "master"
+github "Thoughtbot/Curry" "master"
+github "Quick/Quick" "master"
+github "Quick/Nimble" "master"
+github "hyperoslo/Hue" ~> 2.0.1
+github "robb/Cartography" ~> 1.0.1
+
