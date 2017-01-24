@@ -1,11 +1,3 @@
-//
-//  SoundcloudAPI.swift
-//  Soundy
-//
-//  Created by Sendy Halim on 1/25/17.
-//  Copyright © 2017 Sendy Halim. All rights reserved.
-//
-
 import Foundation
 import Moya
 import RxMoya
