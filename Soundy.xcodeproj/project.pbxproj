@@ -10,6 +10,41 @@
 	<string>46</string>
 	<key>objects</key>
 	<dict>
+		<key>794F4DD31E3A69FA00480B41</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>794F4DD41E3A6A0500480B41</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Services</string>
+			<key>path</key>
+			<string>Services</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>794F4DD41E3A6A0500480B41</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>MusicPlayer.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>794F4DD51E3A6A0500480B41</key>
+		<dict>
+			<key>fileRef</key>
+			<string>794F4DD41E3A6A0500480B41</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>79C5DB491E054A3C0028B07A</key>
 		<dict>
 			<key>children</key>
@@ -113,6 +148,7 @@
 				<string>79C5DB581E054A3D0028B07A</string>
 				<string>79C5DB561E054A3D0028B07A</string>
 				<string>79DBFA8D1E37C5CD00A3B4E5</string>
+				<string>794F4DD51E3A6A0500480B41</string>
 				<string>79DBFA8B1E37C52700A3B4E5</string>
 				<string>79DBFA901E37C69200A3B4E5</string>
 			</array>
@@ -223,6 +259,7 @@
 				<string>79DBFA8E1E37C68400A3B4E5</string>
 				<string>79DBFA891E37C51E00A3B4E5</string>
 				<string>79DBFA861E37C19F00A3B4E5</string>
+				<string>794F4DD31E3A69FA00480B41</string>
 				<string>79C5DB551E054A3D0028B07A</string>
 				<string>79C5DB591E054A3D0028B07A</string>
 				<string>79C5DB5E1E054A3D0028B07A</string>
@@ -1230,8 +1267,6 @@ fi</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Models</string>
 			<key>path</key>
 			<string>Models</string>
 			<key>sourceTree</key>
@@ -1285,8 +1320,6 @@ fi</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Extensions</string>
 			<key>path</key>
 			<string>Extensions</string>
 			<key>sourceTree</key>
