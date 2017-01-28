@@ -7,7 +7,7 @@ struct Track {
   let id: String
   let user: User
   let title: String
-  let imageURL: URL
+  let artworkURL: URL
   let streamURL: URL
   let waveformURL: URL
   let duration: Int
