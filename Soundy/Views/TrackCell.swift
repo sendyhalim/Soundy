@@ -22,6 +22,11 @@ class TrackCell: NSCollectionViewItem {
       .drive(titleTextField.rx.text.orEmpty)
       .addDisposableTo(disposeBag)
 
+    viewModel
+      .artworkURL
+      .drive(onNext: artworkImageView.setImage)
+      .addDisposableTo(disposeBag)
+
     playButton
       .rx.tap
       .subscribe(onNext: viewModel.togglePlay)
