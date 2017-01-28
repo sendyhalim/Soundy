@@ -20,7 +20,9 @@ struct AVMusicPlayer {
   let player: AVPlayer = AVPlayer()
 }
 extension AVMusicPlayer: MusicPlayer {
-  static private let zeroTime = kCMTimeZero
+  struct Time {
+    static fileprivate let beginning = kCMTimeZero
+  }
 
   var volume: Float {
     get {
@@ -44,7 +46,7 @@ extension AVMusicPlayer: MusicPlayer {
   }
 
   func replay() {
-    player.seek(to: AVMusicPlayer.zeroTime) { _ in
+    player.seek(to: AVMusicPlayer.Time.beginning) { _ in
       self.player.play()
     }
   }
