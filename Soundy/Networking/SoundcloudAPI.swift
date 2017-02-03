@@ -1,5 +1,6 @@
 import Foundation
 import Moya
+import RxSwift
 import RxMoya
 
 enum SoundcloudAPI {
@@ -48,5 +49,13 @@ extension SoundcloudAPI: TargetType {
 
   var task: Task {
     return Task.request
+  }
+}
+
+struct Soundcloud {
+  static let provider = RxMoyaProvider<SoundcloudAPI>()
+
+  static func request(api: SoundcloudAPI) -> Observable<Response> {
+    return provider.request(api)
   }
 }

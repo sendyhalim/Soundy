@@ -19,6 +19,7 @@ protocol MusicPlayer {
 struct AVMusicPlayer {
   let player: AVPlayer = AVPlayer()
 }
+
 extension AVMusicPlayer: MusicPlayer {
   struct Time {
     static fileprivate let beginning = kCMTimeZero

@@ -6,18 +6,54 @@
 //  Copyright © 2016 Sendy Halim. All rights reserved.
 //
 
-import Cocoa
+import AppKit
+import RxSwift
 
-class ViewController: NSViewController {
+class RootViewController: NSViewController {
+  @IBOutlet weak var collectionView: NSCollectionView!
+
+  let vm: TrackCollectionViewModelType = TrackCollectionViewModel()
+  let disposeBag = DisposeBag()
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    // Do any additional setup after loading the view.
+    collectionView.dataSource = self
+
+    vm.reload
+      .drive(onNext: collectionView.reloadData)
+      .addDisposableTo(disposeBag)
+
+    vm.search(term: "Oh Wonder").addDisposableTo(disposeBag)
   }
 
   override var representedObject: Any? {
     didSet {
       // Update the view, if already loaded.
     }
+  }
+}
+
+extension RootViewController: NSCollectionViewDataSource {
+  func collectionView(
+    _ collectionView: NSCollectionView,
+    numberOfItemsInSection section: Int
+  ) -> Int {
+    return vm.count
+  }
+
+  func collectionView(
+    _ collectionView: NSCollectionView,
+    itemForRepresentedObjectAt indexPath: IndexPath
+  ) -> NSCollectionViewItem {
+    let cell = collectionView.makeItem(
+      withIdentifier: "TrackCell",
+      for: indexPath
+    ) as! TrackCell
+
+    let viewModel = vm.viewModel(at: indexPath.item)
+    cell.setup(withViewModel: viewModel)
+
+    return cell
   }
 }

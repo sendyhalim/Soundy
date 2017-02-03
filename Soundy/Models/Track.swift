@@ -4,7 +4,7 @@ import Curry
 import Runes
 
 struct Track {
-  let id: String
+  let id: Int
   let user: User
   let title: String
   let artworkURL: URL

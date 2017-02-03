@@ -4,7 +4,7 @@ import Curry
 import Runes
 
 struct User {
-  let id: String
+  let id: Int
   let avatarURL: URL
   let profileURL: URL
   let username: String
