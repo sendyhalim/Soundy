@@ -8,7 +8,7 @@ enum SoundcloudAPI {
 }
 
 extension SoundcloudAPI: TargetType {
-  static private let clientId = "327f7a3adac5989141fe01ce0416b1aa"
+  static fileprivate let clientId = "327f7a3adac5989141fe01ce0416b1aa"
 
   var baseURL: URL {
     return URL(string: "http://api.soundcloud.com")!
@@ -57,5 +57,14 @@ struct Soundcloud {
 
   static func request(api: SoundcloudAPI) -> Observable<Response> {
     return provider.request(api)
+  }
+
+  static func streamURL(url: URL) -> URL {
+    var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)!
+    urlComponents.queryItems = [
+      URLQueryItem(name: "client_id", value: SoundcloudAPI.clientId)
+    ]
+
+    return urlComponents.url!
   }
 }
