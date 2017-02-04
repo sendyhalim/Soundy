@@ -48,7 +48,9 @@ struct TrackCollectionViewModel: TrackCollectionViewModelType {
     let resultDisposable = request
       .filterSuccessfulStatusCodes()
       .mapArray(Track.self, withRootKey: "collection")
-      .map { TrackViewModel.init <^> $0 |> List.init }
+      .map { tracks in
+        { TrackViewModel(track: $0, musicPlayer: AVMusicPlayer.sharedPlayer) } <^> tracks |> List.init
+      }
       .bindTo(_viewModels)
 
     return CompositeDisposable(fetchingDisposable, resultDisposable)

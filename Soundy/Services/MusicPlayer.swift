@@ -17,6 +17,8 @@ protocol MusicPlayer {
 }
 
 struct AVMusicPlayer {
+  static let sharedPlayer = AVMusicPlayer()
+
   let player: AVPlayer = AVPlayer()
 }
 
@@ -36,7 +38,8 @@ extension AVMusicPlayer: MusicPlayer {
   }
 
   func play(track: Track) {
-    let currentItem = AVPlayerItem(url: track.streamURL)
+    let streamURL = Soundcloud.streamURL(url: track.streamURL)
+    let currentItem = AVPlayerItem(url: streamURL)
 
     player.replaceCurrentItem(with: currentItem)
     player.play()
