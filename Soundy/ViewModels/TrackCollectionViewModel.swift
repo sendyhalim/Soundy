@@ -49,7 +49,7 @@ struct TrackCollectionViewModel: TrackCollectionViewModelType {
       .filterSuccessfulStatusCodes()
       .mapArray(Track.self, withRootKey: "collection")
       .map { tracks in
-        { TrackViewModel(track: $0, musicPlayer: AVMusicPlayer.sharedPlayer) } <^> tracks |> List.init
+        TrackViewModel.init <^> tracks |> List.init
       }
       .bindTo(_viewModels)
 

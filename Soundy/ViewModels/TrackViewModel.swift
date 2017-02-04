@@ -25,10 +25,12 @@ struct TrackViewModel: TrackViewModelType {
     return track.asDriver().map { $0.artworkURL }
   }
 
-  // MARK: Input
+   init(track: Track) {
+    self.init(track: track, musicPlayer: AVMusicPlayer.sharedPlayer)
+  }
 
   init(track: Track, musicPlayer: MusicPlayer) {
-    self.track = Variable<Track>(track)
+    self.track = Variable(track)
     self.musicPlayer = musicPlayer
   }
 
