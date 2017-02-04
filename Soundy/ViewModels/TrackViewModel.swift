@@ -23,24 +23,24 @@ struct TrackViewModel: TrackViewModelType {
   var artworkURL: Driver<URL> {
     return track.asDriver().map { $0.artworkURL }
   }
-  
+
   init(track: Track) {
     self.track = Variable<Track>(track)
   }
 
   func togglePlay() {
-     
+
   }
 
   func play() {
-    
+
   }
 
   func pause() {
-    
+
   }
 
   func stop() {
-    
+
   }
 }

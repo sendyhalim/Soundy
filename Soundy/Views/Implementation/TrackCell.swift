@@ -17,6 +17,8 @@ class TrackCell: NSCollectionViewItem {
   var disposeBag = DisposeBag()
 
   func setup(withViewModel viewModel: TrackViewModelType) {
+    disposeBag = DisposeBag()
+
     viewModel
       .title
       .drive(titleTextField.rx.text.orEmpty)
@@ -31,10 +33,5 @@ class TrackCell: NSCollectionViewItem {
       .rx.tap
       .subscribe(onNext: viewModel.togglePlay)
       .addDisposableTo(disposeBag)
-  }
-
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    // Do view setup here.
   }
 }

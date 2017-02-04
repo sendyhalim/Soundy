@@ -685,43 +685,9 @@
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbp-Va-g3u">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                                <clipView key="contentView" drawsBackground="NO" id="ioB-sZ-Mdw">
-                                    <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <collectionView id="0fu-bj-WHD">
-                                            <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="1000000" minimumLineSpacing="10" id="fgq-bv-YWe">
-                                                <size key="itemSize" width="350" height="100"/>
-                                            </collectionViewFlowLayout>
-                                            <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        </collectionView>
-                                    </subviews>
-                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="Ahj-8M-isX">
-                                    <rect key="frame" x="1" y="263" width="472" height="16"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="HZn-hx-gYb">
-                                    <rect key="frame" x="457" y="1" width="16" height="268"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                            </scrollView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="nbp-Va-g3u" secondAttribute="bottom" id="SDJ-Ru-Gz1"/>
-                            <constraint firstItem="nbp-Va-g3u" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="ZeA-9G-6Ah"/>
-                            <constraint firstItem="nbp-Va-g3u" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="b6D-kr-orq"/>
-                            <constraint firstAttribute="trailing" secondItem="nbp-Va-g3u" secondAttribute="trailing" id="ydR-QJ-mWB"/>
-                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="collectionView" destination="0fu-bj-WHD" id="ZIa-Q2-s0h"/>
+                        <outlet property="view" destination="m2S-Jp-Qdl" id="sIp-eZ-Gjw"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
