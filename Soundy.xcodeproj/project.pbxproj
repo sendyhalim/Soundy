@@ -98,6 +98,41 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>793433831E473EC900CD33DC</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>RxTest.framework</string>
+			<key>path</key>
+			<string>Carthage/Build/Mac/RxTest.framework</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>793433841E473EC900CD33DC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>793433831E473EC900CD33DC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>CodeSignOnCopy</string>
+					<string>RemoveHeadersOnCopy</string>
+				</array>
+			</dict>
+		</dict>
+		<key>793433851E473ED500CD33DC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>793433831E473EC900CD33DC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>794F4DD31E3A69FA00480B41</key>
 		<dict>
 			<key>children</key>
@@ -131,6 +166,240 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>795044691E47301A00306F44</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>7950446A1E47302A00306F44</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>ViewModels</string>
+			<key>path</key>
+			<string>ViewModels</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7950446A1E47302A00306F44</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>TrackCollectionViewModelSpec.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7950446B1E47302A00306F44</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7950446A1E47302A00306F44</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>7950446C1E47302F00306F44</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>7950447A1E47372F00306F44</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Fixtures</string>
+			<key>path</key>
+			<string>Fixtures</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7950446D1E47318000306F44</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Nimble.framework</string>
+			<key>path</key>
+			<string>Carthage/Build/Mac/Nimble.framework</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7950446E1E47318000306F44</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>OHHTTPStubs.framework</string>
+			<key>path</key>
+			<string>Carthage/Build/Mac/OHHTTPStubs.framework</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7950446F1E47318000306F44</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Quick.framework</string>
+			<key>path</key>
+			<string>Carthage/Build/Mac/Quick.framework</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>795044701E47318000306F44</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7950446D1E47318000306F44</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>795044711E47318000306F44</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7950446E1E47318000306F44</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>795044721E47318000306F44</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7950446F1E47318000306F44</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>795044731E47319B00306F44</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>dstPath</key>
+			<string></string>
+			<key>dstSubfolderSpec</key>
+			<string>10</string>
+			<key>files</key>
+			<array>
+				<string>793433841E473EC900CD33DC</string>
+				<string>795044771E4731BA00306F44</string>
+				<string>795044781E4731BA00306F44</string>
+				<string>795044791E4731BA00306F44</string>
+			</array>
+			<key>isa</key>
+			<string>PBXCopyFilesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>795044741E4731BA00306F44</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Nimble.framework</string>
+			<key>path</key>
+			<string>Carthage/Build/Mac/Nimble.framework</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>795044751E4731BA00306F44</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>OHHTTPStubs.framework</string>
+			<key>path</key>
+			<string>Carthage/Build/Mac/OHHTTPStubs.framework</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>795044761E4731BA00306F44</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Quick.framework</string>
+			<key>path</key>
+			<string>Carthage/Build/Mac/Quick.framework</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>795044771E4731BA00306F44</key>
+		<dict>
+			<key>fileRef</key>
+			<string>795044741E4731BA00306F44</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>CodeSignOnCopy</string>
+					<string>RemoveHeadersOnCopy</string>
+				</array>
+			</dict>
+		</dict>
+		<key>795044781E4731BA00306F44</key>
+		<dict>
+			<key>fileRef</key>
+			<string>795044751E4731BA00306F44</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>CodeSignOnCopy</string>
+					<string>RemoveHeadersOnCopy</string>
+				</array>
+			</dict>
+		</dict>
+		<key>795044791E4731BA00306F44</key>
+		<dict>
+			<key>fileRef</key>
+			<string>795044761E4731BA00306F44</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>CodeSignOnCopy</string>
+					<string>RemoveHeadersOnCopy</string>
+				</array>
+			</dict>
+		</dict>
+		<key>7950447A1E47372F00306F44</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.json</string>
+			<key>path</key>
+			<string>tracks.fixture.json</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7950447B1E47372F00306F44</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7950447A1E47372F00306F44</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>799796391E45A3D10085862A</key>
 		<dict>
 			<key>fileEncoding</key>
@@ -160,8 +429,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>ViewControllers</string>
 			<key>path</key>
 			<string>ViewControllers</string>
 			<key>sourceTree</key>
@@ -531,7 +798,7 @@
 			<string>2147483647</string>
 			<key>files</key>
 			<array>
-				<string>79C5DB681E054A3D0028B07A</string>
+				<string>7950446B1E47302A00306F44</string>
 			</array>
 			<key>isa</key>
 			<string>PBXSourcesBuildPhase</string>
@@ -543,7 +810,12 @@
 			<key>buildActionMask</key>
 			<string>2147483647</string>
 			<key>files</key>
-			<array/>
+			<array>
+				<string>793433851E473ED500CD33DC</string>
+				<string>795044701E47318000306F44</string>
+				<string>795044721E47318000306F44</string>
+				<string>795044711E47318000306F44</string>
+			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
@@ -554,7 +826,9 @@
 			<key>buildActionMask</key>
 			<string>2147483647</string>
 			<key>files</key>
-			<array/>
+			<array>
+				<string>7950447B1E47372F00306F44</string>
+			</array>
 			<key>isa</key>
 			<string>PBXResourcesBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
@@ -569,6 +843,7 @@
 				<string>79C5DB5F1E054A3D0028B07A</string>
 				<string>79C5DB601E054A3D0028B07A</string>
 				<string>79C5DB611E054A3D0028B07A</string>
+				<string>795044731E47319B00306F44</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -626,8 +901,9 @@
 		<dict>
 			<key>children</key>
 			<array>
+				<string>7950446C1E47302F00306F44</string>
+				<string>795044691E47301A00306F44</string>
 				<string>79C5DB691E054A3D0028B07A</string>
-				<string>79C5DB671E054A3D0028B07A</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -635,24 +911,6 @@
 			<string>SoundyTests</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>79C5DB671E054A3D0028B07A</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>SoundyTests.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>79C5DB681E054A3D0028B07A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>79C5DB671E054A3D0028B07A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
 		</dict>
 		<key>79C5DB691E054A3D0028B07A</key>
 		<dict>
@@ -944,6 +1202,11 @@
 				<string>YES</string>
 				<key>DEVELOPMENT_TEAM</key>
 				<string>4QCP9AS6BP</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>$(PROJECT_DIR)/Carthage/Build/Mac</string>
+				</array>
 				<key>INFOPLIST_FILE</key>
 				<string>SoundyTests/Info.plist</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
@@ -974,6 +1237,11 @@
 				<string>YES</string>
 				<key>DEVELOPMENT_TEAM</key>
 				<string>4QCP9AS6BP</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>$(PROJECT_DIR)/Carthage/Build/Mac</string>
+				</array>
 				<key>INFOPLIST_FILE</key>
 				<string>SoundyTests/Info.plist</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
@@ -996,6 +1264,13 @@
 		<dict>
 			<key>children</key>
 			<array>
+				<string>793433831E473EC900CD33DC</string>
+				<string>795044741E4731BA00306F44</string>
+				<string>795044751E4731BA00306F44</string>
+				<string>795044761E4731BA00306F44</string>
+				<string>7950446D1E47318000306F44</string>
+				<string>7950446E1E47318000306F44</string>
+				<string>7950446F1E47318000306F44</string>
 				<string>79C5DB731E0572950028B07A</string>
 				<string>79C5DB741E0572950028B07A</string>
 				<string>79C5DB751E0572950028B07A</string>
