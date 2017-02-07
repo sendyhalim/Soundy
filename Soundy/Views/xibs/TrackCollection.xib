@@ -5,34 +5,44 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
         <capability name="box content view" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="TrackCollectionViewController" customModule="Soundy" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="7y4-4u-0zl" id="uhA-AZ-w3J"/>
+                <outlet property="searchTextField" destination="Pfw-vg-XUh" id="Zhp-lZ-erG"/>
                 <outlet property="view" destination="c22-O7-iKe" id="ZxB-B2-Fi6"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="c22-O7-iKe">
-            <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+            <rect key="frame" x="0.0" y="0.0" width="480" height="267"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <box boxType="custom" borderType="none" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="Ocf-3K-ohg">
-                    <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="267"/>
                     <view key="contentView" id="goe-aD-oty">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="267"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textField focusRingType="none" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pfw-vg-XUh">
+                                <rect key="frame" x="10" y="232" width="460" height="30"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" alignment="left" placeholderString="Search Tracks" drawsBackground="YES" id="Cfc-co-Qbk">
+                                    <font key="font" metaFont="systemUltraLight" size="17"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                             <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iEu-Pn-ny2">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="232"/>
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="227"/>
                                 <clipView key="contentView" drawsBackground="NO" id="hO9-gz-WDi">
-                                    <rect key="frame" x="0.0" y="0.0" width="480" height="232"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="480" height="227"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView id="7y4-4u-0zl">
-                                            <rect key="frame" x="0.0" y="0.0" width="480" height="232"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="480" height="227"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10000" minimumLineSpacing="10" id="oFV-qQ-CYJ">
                                                 <size key="itemSize" width="350" height="100"/>
@@ -47,7 +57,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="hWB-uW-N9T">
-                                    <rect key="frame" x="234" y="1" width="15" height="143"/>
+                                    <rect key="frame" x="464" y="0.0" width="16" height="227"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -55,8 +65,12 @@
                         <constraints>
                             <constraint firstItem="iEu-Pn-ny2" firstAttribute="top" secondItem="goe-aD-oty" secondAttribute="top" constant="40" id="3KF-cs-l0Y"/>
                             <constraint firstItem="iEu-Pn-ny2" firstAttribute="leading" secondItem="goe-aD-oty" secondAttribute="leading" id="ElW-gg-TPj"/>
-                            <constraint firstAttribute="trailing" secondItem="iEu-Pn-ny2" secondAttribute="trailing" id="ZAA-YN-aHR"/>
-                            <constraint firstAttribute="bottom" secondItem="iEu-Pn-ny2" secondAttribute="bottom" id="ryL-2u-HJb"/>
+                            <constraint firstItem="Pfw-vg-XUh" firstAttribute="trailing" secondItem="goe-aD-oty" secondAttribute="trailing" constant="-10" id="JH7-JK-2Vo"/>
+                            <constraint firstItem="iEu-Pn-ny2" firstAttribute="trailing" secondItem="goe-aD-oty" secondAttribute="trailing" id="ZAA-YN-aHR"/>
+                            <constraint firstItem="Pfw-vg-XUh" firstAttribute="leading" secondItem="goe-aD-oty" secondAttribute="leading" constant="10" id="pTF-6F-GVC"/>
+                            <constraint firstItem="iEu-Pn-ny2" firstAttribute="top" secondItem="Pfw-vg-XUh" secondAttribute="bottom" constant="5" id="qwD-pZ-iC0"/>
+                            <constraint firstItem="iEu-Pn-ny2" firstAttribute="bottom" secondItem="goe-aD-oty" secondAttribute="bottom" id="ryL-2u-HJb"/>
+                            <constraint firstItem="Pfw-vg-XUh" firstAttribute="top" secondItem="goe-aD-oty" secondAttribute="top" constant="5" id="uYs-Zt-VDa"/>
                         </constraints>
                     </view>
                     <color key="fillColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

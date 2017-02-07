@@ -4,6 +4,7 @@ import RxSwift
 
 class TrackCollectionViewController: NSViewController {
   @IBOutlet weak var collectionView: NSCollectionView!
+  @IBOutlet weak var searchTextField: NSTextField!
 
   let collectionViewModel: TrackCollectionViewModelType
   var disposeBag = DisposeBag()
@@ -23,7 +24,6 @@ class TrackCollectionViewController: NSViewController {
     collectionView.dataSource = self
 
     setupBindings()
-    collectionViewModel.search(term: "oh wonder").addDisposableTo(disposeBag)
   }
 
   func setupBindings() {
@@ -32,6 +32,19 @@ class TrackCollectionViewController: NSViewController {
     collectionViewModel
       .reload
       .drive(onNext: collectionView.reloadData)
+      .addDisposableTo(disposeBag)
+
+    searchTextField
+      .rx.text.orEmpty
+      .filter { $0.characters.count > 3 }
+      .throttle(1.0, scheduler: MainScheduler.instance)
+      .subscribe(onNext: { [weak self ]term in
+        guard let `self` = self else {
+          return
+        }
+
+        self.collectionViewModel.search(term: term).addDisposableTo(self.disposeBag)
+      })
       .addDisposableTo(disposeBag)
   }
 }
