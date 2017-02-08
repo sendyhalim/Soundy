@@ -22,7 +22,7 @@ struct TrackViewModel: TrackViewModelType {
   }
 
   var artworkURL: Driver<URL> {
-    return track.asDriver().map { $0.artworkURL }
+    return track.asDriver().map { $0.artworkURL ?? Track.defaultArtworkURL }
   }
 
    init(track: Track) {
@@ -35,11 +35,11 @@ struct TrackViewModel: TrackViewModelType {
   }
 
   func togglePlay() {
-    musicPlayer.play(track: track.value)
+    play()
   }
 
   func play() {
-
+    musicPlayer.play(track: track.value)
   }
 
   func pause() {
