@@ -31,7 +31,6 @@ class TrackCell: NSCollectionViewItem {
 
     playButton
       .rx.tap
-      .observeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
       .subscribe(onNext: viewModel.togglePlay)
       .addDisposableTo(disposeBag)
   }

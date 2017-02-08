@@ -39,10 +39,15 @@ extension AVMusicPlayer: MusicPlayer {
 
   func play(track: Track) {
     let streamURL = Soundcloud.streamURL(url: track.streamURL)
-    let currentItem = AVPlayerItem(url: streamURL)
+    let asset = AVURLAsset(url: streamURL)
 
-    player.replaceCurrentItem(with: currentItem)
-    player.play()
+    // We cannot use `AVPlayerItem(url:)` directly because it will load the audio stream synchronously
+    asset.loadValuesAsynchronously(forKeys: ["playable"]) {
+      let currentItem = AVPlayerItem(asset: asset)
+
+      self.player.replaceCurrentItem(with: currentItem)
+      self.player.play()
+    }
   }
 
   func pause() {
