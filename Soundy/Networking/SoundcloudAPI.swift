@@ -16,7 +16,7 @@ extension SoundcloudAPI: TargetType {
 
   var path: String {
     switch self {
-      case .searchTracks(_):
+    case .searchTracks(_):
         return "/tracks"
     }
   }

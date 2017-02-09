@@ -4,7 +4,7 @@ import RxMoya
 import Moya
 
 extension Response {
-  ///  Transform response data to a type.
+  ///  Transform response data to a type `T`.
   ///
   ///  - throws: Decoding error message
   ///
@@ -38,12 +38,19 @@ extension Response {
   ///
   ///  - returns: Transformed data from response
   func mapArray<T: Decodable>(
-    withRootKey rootKey: String
-    ) throws -> [T] where T == T.DecodedType {
-    let dict = try mapDictionary()
-    let decoded: Decoded<[T]> = decode(dict, rootKey: rootKey)
+    withRootKey rootKey: String? = nil
+  ) throws -> [T] where T == T.DecodedType {
+    if rootKey == nil {
+      let json = try mapJSON()
+      let decoded: Decoded<[T]> = decode(json)
 
-    return try decodedValue(decoded)
+      return try decodedValue(decoded)
+    } else {
+      let dict = try mapDictionary()
+      let decoded: Decoded<[T]> = decode(dict, rootKey: rootKey!)
+
+      return try decodedValue(decoded)
+    }
   }
 
   ///  Map response data as dictionary
@@ -93,7 +100,7 @@ extension ObservableType where E == Response {
 
   func mapArray<T: Decodable>(
     _ type: T.Type,
-    withRootKey rootKey: String
+    withRootKey rootKey: String?
     ) -> Observable<[T]> where T == T.DecodedType {
     return map {
       return try $0.mapArray(withRootKey: rootKey)
