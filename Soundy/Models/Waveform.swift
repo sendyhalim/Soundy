@@ -15,23 +15,23 @@ struct Waveform {
   let barHeights: [Double]
 }
 
-func averageBarHeights(n: Int, barHeights: [Double]) -> [Double] {
+func averageBarHeights(range: Int, barHeights: [Double]) -> [Double] {
   var rangeCounter = 0
   var ranges: [ClosedRange<Int>] = []
 
   while rangeCounter < barHeights.count {
-    var upperBound = rangeCounter + n - 1
+    var upperBound = rangeCounter + range - 1
 
     if upperBound > (barHeights.count - 1) {
       upperBound = barHeights.count - 1
     }
 
     ranges.append(rangeCounter...upperBound)
-    rangeCounter += n
+    rangeCounter += range
   }
 
-  return ranges.map { range in
-    barHeights[range].reduce(0, (+)) / Double(range.count)
+  return ranges.map {
+    barHeights[$0].reduce(0, (+)) / Double($0.count)
   }
 }
 
