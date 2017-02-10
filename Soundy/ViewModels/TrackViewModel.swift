@@ -5,7 +5,7 @@ import RxCocoa
 protocol TrackViewModelType {
   var title: Driver<String> { get }
   var artworkURL: Driver<URL> { get }
-  var waveformData: Driver<[Int]> { get }
+  var waveformData: Driver<Waveform> { get }
 
   func togglePlay()
   func play()
@@ -26,14 +26,14 @@ struct TrackViewModel: TrackViewModelType {
     return track.asDriver().map { $0.artworkURL ?? Track.defaultArtworkURL }
   }
 
-  var waveformData: Driver<[Int]> {
+  var waveformData: Driver<Waveform> {
     return track.asDriver().flatMap {
       let api = WaveformAPI.waveformData($0.waveformURL)
 
-      return Waveform
+      return WaveformData
         .request(api: api)
-        .mapArray(Int.self, withRootKey: nil)
-        .asDriver(onErrorJustReturn: [])
+        .map(Waveform.self)
+        .asDriver(onErrorJustReturn: Waveform(barHeights: []))
     }
   }
 

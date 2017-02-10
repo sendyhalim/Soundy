@@ -12,7 +12,7 @@ enum WaveformAPI {
 
 extension WaveformAPI: TargetType {
   var baseURL: URL {
-    return URL(string: "http://www.waveformjs.org/w")!
+    return URL(string: "http://www.waveformjs.org")!
   }
 
   var path: String {
@@ -51,7 +51,7 @@ extension WaveformAPI: TargetType {
   }
 }
 
-struct Waveform {
+struct WaveformData {
   static let provider = RxMoyaProvider<WaveformAPI>()
 
   static func request(api: WaveformAPI) -> Observable<Response> {

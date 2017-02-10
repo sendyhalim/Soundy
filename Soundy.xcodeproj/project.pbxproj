@@ -10,6 +10,7 @@
 		791B28A91E3C5D0000597A2A /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791B28A81E3C5D0000597A2A /* TrackCell.swift */; };
 		791B28AC1E3C5E2E00597A2A /* TrackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791B28AB1E3C5E2E00597A2A /* TrackViewModel.swift */; };
 		791B28AE1E3C64A600597A2A /* NSImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791B28AD1E3C64A600597A2A /* NSImageView.swift */; };
+		79317E311E4DFD0A00AD9E93 /* Waveform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79317E301E4DFD0A00AD9E93 /* Waveform.swift */; };
 		793433841E473EC900CD33DC /* RxTest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 793433831E473EC900CD33DC /* RxTest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		793433851E473ED500CD33DC /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 793433831E473EC900CD33DC /* RxTest.framework */; };
 		79363E741E4CEB710038D357 /* WaveformAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79363E731E4CEB710038D357 /* WaveformAPI.swift */; };
@@ -82,6 +83,7 @@
 		791B28A81E3C5D0000597A2A /* TrackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
 		791B28AB1E3C5E2E00597A2A /* TrackViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackViewModel.swift; sourceTree = "<group>"; };
 		791B28AD1E3C64A600597A2A /* NSImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSImageView.swift; sourceTree = "<group>"; };
+		79317E301E4DFD0A00AD9E93 /* Waveform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Waveform.swift; sourceTree = "<group>"; };
 		793433831E473EC900CD33DC /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/Mac/RxTest.framework; sourceTree = "<group>"; };
 		79363E731E4CEB710038D357 /* WaveformAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveformAPI.swift; sourceTree = "<group>"; };
 		794F4DD41E3A6A0500480B41 /* MusicPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 			children = (
 				79DBFA8A1E37C52700A3B4E5 /* Track.swift */,
 				79DBFA8C1E37C5CD00A3B4E5 /* User.swift */,
+				79317E301E4DFD0A00AD9E93 /* Waveform.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -492,6 +495,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79317E311E4DFD0A00AD9E93 /* Waveform.swift in Sources */,
 				791B28AC1E3C5E2E00597A2A /* TrackViewModel.swift in Sources */,
 				79DBFA881E37C20A00A3B4E5 /* SoundcloudAPI.swift in Sources */,
 				79C5DB581E054A3D0028B07A /* RootViewController.swift in Sources */,
