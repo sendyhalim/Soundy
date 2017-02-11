@@ -22,7 +22,7 @@ func barView(at index: Int, height: Double) -> NSView {
 
   bar.setFrameOrigin(origin)
   bar.wantsLayer = true
-  bar.layer!.backgroundColor = NSColor.black.cgColor
+  bar.layer!.backgroundColor = Config.Track.barOffColor.cgColor
 
   return bar
 }

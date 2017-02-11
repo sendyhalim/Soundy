@@ -36,7 +36,7 @@ func averageBarHeights(range: Int, barHeights: [Double]) -> [Double] {
 extension Waveform: Decodable {
   static func decode(_ json: JSON) -> Decoded<Waveform> {
     return [Double].decode(json)
-      .map(curry(averageBarHeights)(6))
+      .map(curry(averageBarHeights)(Config.Track.barClusterSize))
       .map(Waveform.init)
   }
 }
