@@ -28,7 +28,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField focusRingType="none" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pfw-vg-XUh">
-                                <rect key="frame" x="10" y="232" width="460" height="30"/>
+                                <rect key="frame" x="10" y="241" width="460" height="21"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" alignment="left" placeholderString="Search Tracks" drawsBackground="YES" id="Cfc-co-Qbk">
                                     <font key="font" metaFont="systemUltraLight" size="17"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -36,16 +36,16 @@
                                 </textFieldCell>
                             </textField>
                             <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iEu-Pn-ny2">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="227"/>
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="236"/>
                                 <clipView key="contentView" drawsBackground="NO" id="hO9-gz-WDi">
-                                    <rect key="frame" x="0.0" y="0.0" width="480" height="227"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="480" height="236"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView id="7y4-4u-0zl">
-                                            <rect key="frame" x="0.0" y="0.0" width="480" height="227"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="480" height="236"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10000" minimumLineSpacing="10" id="oFV-qQ-CYJ">
-                                                <size key="itemSize" width="350" height="100"/>
+                                                <size key="itemSize" width="715" height="105"/>
                                             </collectionViewFlowLayout>
                                             <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </collectionView>
@@ -53,7 +53,7 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="zrJ-7S-p37">
-                                    <rect key="frame" x="1" y="144" width="233" height="15"/>
+                                    <rect key="frame" x="0.0" y="211" width="0.0" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="hWB-uW-N9T">
@@ -63,7 +63,6 @@
                             </scrollView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="iEu-Pn-ny2" firstAttribute="top" secondItem="goe-aD-oty" secondAttribute="top" constant="40" id="3KF-cs-l0Y"/>
                             <constraint firstItem="iEu-Pn-ny2" firstAttribute="leading" secondItem="goe-aD-oty" secondAttribute="leading" id="ElW-gg-TPj"/>
                             <constraint firstItem="Pfw-vg-XUh" firstAttribute="trailing" secondItem="goe-aD-oty" secondAttribute="trailing" constant="-10" id="JH7-JK-2Vo"/>
                             <constraint firstItem="iEu-Pn-ny2" firstAttribute="trailing" secondItem="goe-aD-oty" secondAttribute="trailing" id="ZAA-YN-aHR"/>
@@ -77,9 +76,9 @@
                 </box>
             </subviews>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="Ocf-3K-ohg" secondAttribute="trailing" id="49W-UQ-rdq"/>
+                <constraint firstItem="Ocf-3K-ohg" firstAttribute="trailing" secondItem="c22-O7-iKe" secondAttribute="trailing" id="49W-UQ-rdq"/>
                 <constraint firstItem="Ocf-3K-ohg" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="5JR-Cp-xci"/>
-                <constraint firstAttribute="bottom" secondItem="Ocf-3K-ohg" secondAttribute="bottom" id="fSz-B5-fQ4"/>
+                <constraint firstItem="Ocf-3K-ohg" firstAttribute="bottom" secondItem="c22-O7-iKe" secondAttribute="bottom" id="fSz-B5-fQ4"/>
                 <constraint firstItem="Ocf-3K-ohg" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="trA-t8-xPA"/>
             </constraints>
         </customView>

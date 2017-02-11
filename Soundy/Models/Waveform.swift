@@ -1,11 +1,3 @@
-//
-//  Waveform.swift
-//  Soundy
-//
-//  Created by Sendy Halim on 2/10/17.
-//  Copyright © 2017 Sendy Halim. All rights reserved.
-//
-
 import Foundation
 import Argo
 import Runes
@@ -15,6 +7,12 @@ struct Waveform {
   let barHeights: [Double]
 }
 
+///  Calculate average bar heights of a track
+///
+///  - parameter range:      Size of each cluster
+///  - parameter barHeights: Array of bar heights in `Double`
+///
+///  - returns: Average bar heights
 func averageBarHeights(range: Int, barHeights: [Double]) -> [Double] {
   var rangeCounter = 0
   var ranges: [ClosedRange<Int>] = []
@@ -31,14 +29,14 @@ func averageBarHeights(range: Int, barHeights: [Double]) -> [Double] {
   }
 
   return ranges.map {
-    barHeights[$0].reduce(0, (+)) / Double($0.count)
+    (barHeights[$0].reduce(0, (+)) / Double($0.count)) * Config.Track.maxBarHeight
   }
 }
 
 extension Waveform: Decodable {
   static func decode(_ json: JSON) -> Decoded<Waveform> {
     return [Double].decode(json)
-      .map(curry(averageBarHeights)(12))
+      .map(curry(averageBarHeights)(6))
       .map(Waveform.init)
   }
 }
