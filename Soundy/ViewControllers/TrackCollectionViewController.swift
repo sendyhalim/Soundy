@@ -38,7 +38,7 @@ class TrackCollectionViewController: NSViewController {
       .rx.text.orEmpty
       .filter { $0.characters.count > 3 }
       .throttle(1.0, scheduler: MainScheduler.instance)
-      .subscribe(onNext: { [weak self ]term in
+      .subscribe(onNext: { [weak self] term in
         guard let `self` = self else {
           return
         }

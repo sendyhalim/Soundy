@@ -6,23 +6,25 @@ import RxSwift
 ///  - parameter index: Bar view index (zero based)
 ///
 ///  - returns: x offset
-func xPositionForBar(at index: Int) -> CGFloat {
-  return CGFloat(Config.Track.barWidth + Config.Track.barRange) * CGFloat(index)
+func xPositionForBar(at index: Int) -> Double {
+  return (Config.Track.barWidth + Config.Track.barRange) * Double(index)
 }
 
-///  Create a bar view, its x position will be automatically calculated based on the given index.
+///  Create a bar layer, its x position will be automatically calculated based on the given index.
 ///
 ///  - parameter index:  Bar view position (zero based)
 ///  - parameter height: Bar view height
 ///
-///  - returns: Bar view
-func barView(at index: Int, height: Double) -> NSView {
-  let bar = NSView(frame: NSRect(x: 0, y: 0, width: Config.Track.barWidth, height: height))
-  let origin = NSPoint(x: xPositionForBar(at: index), y: bar.frame.origin.y)
-
-  bar.setFrameOrigin(origin)
-  bar.wantsLayer = true
-  bar.layer!.backgroundColor = Config.Track.barOffColor.cgColor
+///  - returns: Bar layer
+func barLayer(at index: Int, height: Double) -> CALayer {
+  let bar = CALayer()
+  bar.backgroundColor = Config.Track.barOffColor.cgColor
+  bar.frame = NSRect(
+    x: xPositionForBar(at: index),
+    y: Double(bar.frame.origin.y),
+    width: Config.Track.barWidth,
+    height: height
+  )
 
   return bar
 }
@@ -37,9 +39,10 @@ class TrackCell: NSCollectionViewItem {
 
   override func awakeFromNib() {
     super.awakeFromNib()
+    barContainerView.contentView!.wantsLayer = true
 
     for i in 0..<300 {
-      barContainerView.addSubview(barView(at: i, height: 0))
+      barContainerView.contentView!.layer!.addSublayer(barLayer(at: i, height: 0))
     }
   }
 
@@ -70,9 +73,10 @@ class TrackCell: NSCollectionViewItem {
   }
 
   func updateWaveformView(waveform: Waveform) {
+    let bars = barContainerView.contentView!.layer!.sublayers!
+
     for i in 0..<waveform.barHeights.count {
-      let view = barContainerView.contentView!.subviews[i]
-      view.frame.size.height = CGFloat(waveform.barHeights[i])
+      bars[i].frame.size.height = CGFloat(waveform.barHeights[i])
     }
 
     barContainerView.isHidden = false
