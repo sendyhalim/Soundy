@@ -8,10 +8,11 @@
 
 import AVFoundation
 import Foundation
+import RxSwift
 
 protocol MusicPlayer {
   var volume: Float { get set }
-  func play(track: Track)
+  func play(track: Track) -> Observable<Void>
   func pause()
   func replay()
 }
@@ -37,16 +38,22 @@ extension AVMusicPlayer: MusicPlayer {
     }
   }
 
-  func play(track: Track) {
+  func play(track: Track) -> Observable<Void> {
     let streamURL = Soundcloud.streamURL(url: track.streamURL)
     let asset = AVURLAsset(url: streamURL)
 
-    // We cannot use `AVPlayerItem(url:)` directly because it will load the audio stream synchronously
-    asset.loadValuesAsynchronously(forKeys: ["playable"]) {
-      let currentItem = AVPlayerItem(asset: asset)
+    return Observable.create { observer in
+      // We cannot use `AVPlayerItem(url:)` directly because it will load the audio stream synchronously
+      asset.loadValuesAsynchronously(forKeys: ["playable"]) {
+        let currentItem = AVPlayerItem(asset: asset)
 
-      self.player.replaceCurrentItem(with: currentItem)
-      self.player.play()
+        self.player.replaceCurrentItem(with: currentItem)
+        self.player.play()
+        observer.on(.next())
+        observer.on(.completed)
+      }
+
+      return Disposables.create()
     }
   }
 
