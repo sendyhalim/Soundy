@@ -490,6 +490,26 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>799F8BAC1E540B6B00E5D9B0</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>NSBezierPath.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>799F8BAD1E540B6B00E5D9B0</key>
+		<dict>
+			<key>fileRef</key>
+			<string>799F8BAC1E540B6B00E5D9B0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>79A3B9861E4EF86500215442</key>
 		<dict>
 			<key>children</key>
@@ -632,6 +652,7 @@
 				<string>79D275131E44EDF30034AD54</string>
 				<string>79DBFA8D1E37C5CD00A3B4E5</string>
 				<string>79363E741E4CEB710038D357</string>
+				<string>799F8BAD1E540B6B00E5D9B0</string>
 				<string>794F4DD51E3A6A0500480B41</string>
 				<string>79D275111E44EB850034AD54</string>
 				<string>79DBFA8B1E37C52700A3B4E5</string>
@@ -807,8 +828,6 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>folder.assetcatalog</string>
-			<key>name</key>
-			<string>Assets.xcassets</string>
 			<key>path</key>
 			<string>Assets.xcassets</string>
 			<key>sourceTree</key>
@@ -1946,6 +1965,7 @@ fi</string>
 		<dict>
 			<key>children</key>
 			<array>
+				<string>799F8BAC1E540B6B00E5D9B0</string>
 				<string>791B28AD1E3C64A600597A2A</string>
 				<string>79D275121E44EDF30034AD54</string>
 				<string>79DBFA8F1E37C69200A3B4E5</string>
@@ -1985,8 +2005,6 @@ fi</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Resources</string>
 			<key>path</key>
 			<string>Resources</string>
 			<key>sourceTree</key>
