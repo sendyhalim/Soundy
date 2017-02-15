@@ -8,6 +8,6 @@ struct Config {
     static let barWidth = 1.5
     static let barRange = 0.5
     static let barOffColor = NSColor(hex: "#404552")
-    static let barOnColor = NSColor(hex: "#2196f3")
+    static let barOnColor = NSColor(hex: "#1a75f0")
   }
 }

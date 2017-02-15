@@ -92,7 +92,7 @@ extension ObservableType where E == Response {
   func map<T: Decodable>(
     _ type: T.Type,
     withRootKey rootKey: String
-    ) -> Observable<T> where T == T.DecodedType {
+  ) -> Observable<T> where T == T.DecodedType {
     return map {
       try $0.map(withRootKey: rootKey)
     }
@@ -101,7 +101,7 @@ extension ObservableType where E == Response {
   func mapArray<T: Decodable>(
     _ type: T.Type,
     withRootKey rootKey: String?
-    ) -> Observable<[T]> where T == T.DecodedType {
+  ) -> Observable<[T]> where T == T.DecodedType {
     return map {
       return try $0.mapArray(withRootKey: rootKey)
     }

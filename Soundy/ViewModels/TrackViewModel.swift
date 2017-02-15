@@ -1,3 +1,4 @@
+import AppKit
 import Foundation
 import RxSwift
 import RxCocoa
@@ -6,9 +7,10 @@ protocol TrackViewModelType {
   var title: Driver<String> { get }
   var artworkURL: Driver<URL> { get }
   var waveformData: Driver<Waveform> { get }
+  var barAnimation: Driver<CABasicAnimation> { get }
 
-  func togglePlay()
-  func play()
+  func togglePlay() -> Driver<Int>
+  func play() -> Driver<Int>
   func pause()
   func stop()
 }
@@ -16,6 +18,9 @@ protocol TrackViewModelType {
 struct TrackViewModel: TrackViewModelType {
   let track: Variable<Track>
   let musicPlayer: MusicPlayer
+
+  // MARK: Input
+  private let _barAnimation = Variable<CABasicAnimation?>(nil)
 
   // MARK: Output
   var title: Driver<String> {
@@ -37,6 +42,13 @@ struct TrackViewModel: TrackViewModelType {
     }
   }
 
+  var barAnimation: Driver<CABasicAnimation> {
+    return _barAnimation
+      .asDriver()
+      .filter { $0 != nil }
+      .map { $0! }
+  }
+
    init(track: Track) {
     self.init(track: track, musicPlayer: AVMusicPlayer.sharedPlayer)
   }
@@ -46,12 +58,17 @@ struct TrackViewModel: TrackViewModelType {
     self.musicPlayer = musicPlayer
   }
 
-  func togglePlay() {
-    play()
+  func togglePlay() -> Driver<Int> {
+    return play()
   }
 
-  func play() {
-    musicPlayer.play(track: track.value)
+  func play() -> Driver<Int> {
+    return musicPlayer
+      .play(track: track.value)
+      .map {
+        self.track.value.duration
+      }
+      .asDriver(onErrorJustReturn: 0)
   }
 
   func pause() {
