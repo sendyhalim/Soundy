@@ -13,8 +13,14 @@ import RxSwift
 protocol MusicPlayer {
   var volume: Float { get set }
   func play(track: Track) -> Observable<Void>
-  func pause()
+  func pause() -> Observable<Void>
   func replay()
+}
+
+enum PlayerState {
+  case playing
+  case paused
+  case stopped
 }
 
 struct AVMusicPlayer {
@@ -57,8 +63,15 @@ extension AVMusicPlayer: MusicPlayer {
     }
   }
 
-  func pause() {
-    player.pause()
+  func pause() -> Observable<Void> {
+    return Observable.create { observer in
+      self.player.pause()
+
+      observer.on(.next())
+      observer.on(.completed)
+
+      return Disposables.create()
+    }
   }
 
   func replay() {

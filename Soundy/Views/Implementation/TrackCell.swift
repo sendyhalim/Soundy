@@ -124,10 +124,31 @@ class TrackCell: NSCollectionViewItem {
       .drive(onNext: artworkImageView.setImage)
       .addDisposableTo(disposeBag)
 
+    viewModel
+      .durationLeft
+      .drive(onNext: animateBarWidth)
+      .addDisposableTo(disposeBag)
+
+    viewModel
+      .playingIcon
+      .drive(onNext: { [weak self] in
+        guard let `self` = self else {
+          return
+        }
+
+        self.playButton.image = $0
+      })
+      .addDisposableTo(disposeBag)
+
     playButton
       .rx.tap
-      .flatMap(viewModel.togglePlay)
-      .subscribe(onNext: animateBarWidth)
+      .subscribe(onNext: { [weak self] in
+        guard let `self` = self else {
+          return
+        }
+
+        viewModel.togglePlay().addDisposableTo(self.disposeBag)
+      })
       .addDisposableTo(disposeBag)
   }
 
