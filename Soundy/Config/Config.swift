@@ -6,7 +6,7 @@ struct Config {
     static let play: NSImage = #imageLiteral(resourceName: "Play")
     static let pause: NSImage = #imageLiteral(resourceName: "Pause")
   }
-  
+
   struct Track {
     static let maxBarHeight = 40.0
     static let barClusterSize = 6

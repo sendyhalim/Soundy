@@ -125,7 +125,7 @@ class TrackCell: NSCollectionViewItem {
       .addDisposableTo(disposeBag)
 
     viewModel
-      .durationLeft
+      .playingWithDuration
       .drive(onNext: animateBarWidth)
       .addDisposableTo(disposeBag)
 
@@ -160,10 +160,10 @@ class TrackCell: NSCollectionViewItem {
     barContainerView.isHidden = false
   }
 
-  func animateBarWidth(withDuration duration: Int) {
+  func animateBarWidth(withDuration duration: Double) {
     let onBarLayer = barContainerView.contentView!.layer!.sublayers![1]
     let animation = CABasicAnimation(keyPath: "bounds.size.width")
-    animation.duration = Double(duration) / 1000
+    animation.duration = duration / 1000
     animation.fromValue = 0
     animation.toValue = barContainerView.frame.size.width
 

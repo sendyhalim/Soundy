@@ -8,7 +8,8 @@ protocol TrackViewModelType {
   var artworkURL: Driver<URL> { get }
   var waveformData: Driver<Waveform> { get }
   var barAnimation: Driver<CABasicAnimation> { get }
-  var durationLeft: Driver<Int> { get }
+  var playingWithDuration: Driver<Double> { get }
+  var durationLeft: Driver<Double> { get }
   var playerState: Driver<PlayerState> { get }
   var playingIcon: Driver<NSImage> { get }
 
@@ -26,7 +27,7 @@ struct TrackViewModel: TrackViewModelType {
   private let _barAnimation = Variable<CABasicAnimation?>(nil)
   private let _playerState = Variable<PlayerState>(.stopped)
   private let _playingIcon = Variable<NSImage>(Config.Icon.play)
-  private let _durationLeft = PublishSubject<Int>()
+  private let _durationLeft: Variable<Double>
 
   // MARK: Output
   var title: Driver<String> {
@@ -55,8 +56,8 @@ struct TrackViewModel: TrackViewModelType {
       .map { $0! }
   }
 
-  var durationLeft: Driver<Int> {
-    return _durationLeft.asDriver(onErrorJustReturn: 0)
+  var durationLeft: Driver<Double> {
+    return _durationLeft.asDriver()
   }
 
   var playerState: Driver<PlayerState> {
@@ -65,6 +66,13 @@ struct TrackViewModel: TrackViewModelType {
 
   var playingIcon: Driver<NSImage> {
     return _playingIcon.asDriver()
+  }
+
+  var playingWithDuration: Driver<Double> {
+    return _playerState
+      .asDriver()
+      .filter { $0 == .playing }
+      .flatMap { _ in self.durationLeft }
   }
 
   var disposeBag = DisposeBag()
@@ -76,6 +84,7 @@ struct TrackViewModel: TrackViewModelType {
   init(track: Track, musicPlayer: MusicPlayer) {
     self.track = Variable(track)
     self.musicPlayer = musicPlayer
+    self._durationLeft = Variable(track.duration)
 
     let playerState = _playerState.asDriver()
 

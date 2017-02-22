@@ -12,7 +12,7 @@ struct Track {
   let artworkURL: URL?
   let streamURL: URL
   let waveformURL: URL
-  let duration: Int
+  let duration: Double
   let playbackCount: Int
 }
 
