@@ -40,12 +40,22 @@ struct TrackViewModel: TrackViewModelType {
 
   var waveformData: Driver<Waveform> {
     return track.asDriver().flatMap {
+      if self.track.value.waveform != nil {
+        return Driver.just(self.track.value.waveform!)
+      }
+
       let api = WaveformAPI.waveformData($0.waveformURL)
 
-      return WaveformData
+      let requestWaveformDataDriver = WaveformData
         .request(api: api)
         .map(Waveform.self)
         .asDriver(onErrorJustReturn: Waveform(barHeights: []))
+
+      requestWaveformDataDriver
+        .drive(onNext: { self.track.value.waveform = $0 })
+        .addDisposableTo(self.disposeBag)
+
+      return requestWaveformDataDriver
     }
   }
 

@@ -5,7 +5,6 @@ import Runes
 
 struct Track {
   static let defaultArtworkURL = URL(string: "https://github.com/identicons/github.png")!
-
   let id: Int
   let user: User
   let title: String
@@ -14,6 +13,28 @@ struct Track {
   let waveformURL: URL
   let duration: Double
   let playbackCount: Int
+
+  var waveform: Waveform?
+
+  init(
+    id: Int,
+    user: User,
+    title: String,
+    artworkURL: URL?,
+    streamURL: URL,
+    waveformURL: URL,
+    duration: Double,
+    playbackCount: Int
+  ) {
+    self.id = id
+    self.user = user
+    self.title = title
+    self.artworkURL = artworkURL
+    self.streamURL = streamURL
+    self.waveformURL = waveformURL
+    self.duration = duration
+    self.playbackCount = playbackCount
+  }
 }
 
 extension Track: Decodable {
