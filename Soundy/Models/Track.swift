@@ -11,7 +11,7 @@ struct Track {
   let artworkURL: URL?
   let streamURL: URL
   let waveformURL: URL
-  let duration: Double
+  let duration: Duration
   let playbackCount: Int
 
   var waveform: Waveform?
@@ -23,7 +23,7 @@ struct Track {
     artworkURL: URL?,
     streamURL: URL,
     waveformURL: URL,
-    duration: Double,
+    duration: Duration,
     playbackCount: Int
   ) {
     self.id = id
