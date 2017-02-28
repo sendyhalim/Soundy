@@ -92,27 +92,27 @@ func barContainerLayer(forView view: NSView) -> CALayer {
 
 class TrackCell: NSCollectionViewItem {
   @IBOutlet weak var titleTextField: NSTextField!
+  @IBOutlet weak var durationTextField: NSTextField!
   @IBOutlet weak var artworkImageView: NSImageView!
   @IBOutlet weak var playButton: NSButton!
-  @IBOutlet weak var barContainerView: NSBox!
 
   var disposeBag = DisposeBag()
 
-  override func awakeFromNib() {
-    super.awakeFromNib()
-    barContainerView.contentView!.wantsLayer = true
-    barContainerView.contentView!.layer = barContainerLayer(forView: barContainerView.contentView!)
-  }
+//  override func awakeFromNib() {
+//    super.awakeFromNib()
+//    barContainerView.contentView!.wantsLayer = true
+//    barContainerView.contentView!.layer = barContainerLayer(forView: barContainerView.contentView!)
+//  }
 
   func setup(withViewModel viewModel: TrackViewModelType) {
     disposeBag = DisposeBag()
 
-    barContainerView.isHidden = true
+//    barContainerView.isHidden = true
 
-    viewModel
-      .waveformData
-      .drive(onNext: updateWaveformView)
-      .addDisposableTo(disposeBag)
+//    viewModel
+//      .waveformData
+//      .drive(onNext: updateWaveformView)
+//      .addDisposableTo(disposeBag)
 
     viewModel
       .title
@@ -120,14 +120,19 @@ class TrackCell: NSCollectionViewItem {
       .addDisposableTo(disposeBag)
 
     viewModel
+      .duration
+      .drive(durationTextField.rx.text.orEmpty)
+      .addDisposableTo(disposeBag)
+
+    viewModel
       .artworkURL
       .drive(onNext: artworkImageView.setImage)
       .addDisposableTo(disposeBag)
 
-    viewModel
-      .playingWithDuration
-      .drive(onNext: animateBarWidth)
-      .addDisposableTo(disposeBag)
+//    viewModel
+//      .playingWithDuration
+//      .drive(onNext: animateBarWidth)
+//      .addDisposableTo(disposeBag)
 
     viewModel
       .playingIcon
@@ -152,22 +157,22 @@ class TrackCell: NSCollectionViewItem {
       .addDisposableTo(disposeBag)
   }
 
-  func updateWaveformView(waveform: Waveform) {
-    let layer = barShapeLayer(forView: barContainerView.contentView!, waveform: waveform)
-    let barLayers = barContainerView.contentView!.layer!.sublayers!
-    barLayers.last!.mask = layer
-
-    barContainerView.isHidden = false
-  }
-
-  func animateBarWidth(withDuration duration: Double) {
-    let onBarLayer = barContainerView.contentView!.layer!.sublayers![1]
-    let animation = CABasicAnimation(keyPath: "bounds.size.width")
-    animation.duration = duration / 1000
-    animation.fromValue = 0
-    animation.toValue = barContainerView.frame.size.width
-
-    onBarLayer.add(animation, forKey: nil)
-    onBarLayer.isHidden = false
-  }
+//  func updateWaveformView(waveform: Waveform) {
+//    let layer = barShapeLayer(forView: barContainerView.contentView!, waveform: waveform)
+//    let barLayers = barContainerView.contentView!.layer!.sublayers!
+//    barLayers.last!.mask = layer
+//
+//    barContainerView.isHidden = false
+//  }
+//
+//  func animateBarWidth(withDuration duration: Double) {
+//    let onBarLayer = barContainerView.contentView!.layer!.sublayers![1]
+//    let animation = CABasicAnimation(keyPath: "bounds.size.width")
+//    animation.duration = duration / 1000
+//    animation.fromValue = 0
+//    animation.toValue = barContainerView.frame.size.width
+//
+//    onBarLayer.add(animation, forKey: nil)
+//    onBarLayer.isHidden = false
+//  }
 }

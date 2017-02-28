@@ -8,6 +8,7 @@ protocol TrackViewModelType {
   var artworkURL: Driver<URL> { get }
   var waveformData: Driver<Waveform> { get }
   var barAnimation: Driver<CABasicAnimation> { get }
+  var duration: Driver<String> { get }
   var playingWithDuration: Driver<Double> { get }
   var durationLeft: Driver<Double> { get }
   var playerState: Driver<PlayerState> { get }
@@ -85,6 +86,12 @@ struct TrackViewModel: TrackViewModelType {
       .flatMap { _ in self.durationLeft }
   }
 
+  var duration: Driver<String> {
+    return track
+      .asDriver()
+      .map { "\($0.duration)" }
+  }
+
   var disposeBag = DisposeBag()
 
   init(track: Track) {
@@ -94,7 +101,7 @@ struct TrackViewModel: TrackViewModelType {
   init(track: Track, musicPlayer: MusicPlayer) {
     self.track = Variable(track)
     self.musicPlayer = musicPlayer
-    self._durationLeft = Variable(track.duration)
+    self._durationLeft = Variable(track.duration.doubleValue)
 
     let playerState = _playerState.asDriver()
 
@@ -102,7 +109,7 @@ struct TrackViewModel: TrackViewModelType {
       .map {
         switch $0 {
           case .playing:
-            return track.duration
+            return track.duration.doubleValue
 
           default:
             return 0

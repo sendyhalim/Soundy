@@ -62,17 +62,17 @@
                                     <constraint firstAttribute="height" constant="32" id="6YJ-uG-zuQ"/>
                                 </constraints>
                             </box>
-                            <scrollView wantsLayer="YES" misplaced="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iEu-Pn-ny2">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="236"/>
+                            <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iEu-Pn-ny2">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="235"/>
                                 <clipView key="contentView" drawsBackground="NO" id="hO9-gz-WDi">
-                                    <rect key="frame" x="0.0" y="0.0" width="480" height="236"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="480" height="235"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView id="7y4-4u-0zl">
-                                            <rect key="frame" x="0.0" y="0.0" width="480" height="267"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="480" height="265"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10000" minimumLineSpacing="10" id="oFV-qQ-CYJ">
-                                                <size key="itemSize" width="715" height="105"/>
+                                                <size key="itemSize" width="600" height="70"/>
                                             </collectionViewFlowLayout>
                                             <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </collectionView>
@@ -84,7 +84,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="hWB-uW-N9T">
-                                    <rect key="frame" x="464" y="0.0" width="16" height="236"/>
+                                    <rect key="frame" x="464" y="0.0" width="16" height="235"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
