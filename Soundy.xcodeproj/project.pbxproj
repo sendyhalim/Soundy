@@ -543,6 +543,26 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>79A8A1E71E688C1900C8630F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.xib</string>
+			<key>path</key>
+			<string>TrackPlayer.xib</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>79A8A1E81E688C1900C8630F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>79A8A1E71E688C1900C8630F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>79C27ED61E65BA150029A1E6</key>
 		<dict>
 			<key>fileEncoding</key>
@@ -551,8 +571,6 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>Duration.swift</string>
 			<key>path</key>
 			<string>Duration.swift</string>
 			<key>sourceTree</key>
@@ -724,6 +742,7 @@
 			<array>
 				<string>79D2750F1E44E9480034AD54</string>
 				<string>7997963A1E45A3D10085862A</string>
+				<string>79A8A1E81E688C1900C8630F</string>
 				<string>79C5DB5A1E054A3D0028B07A</string>
 				<string>79C5DB5D1E054A3D0028B07A</string>
 			</array>
@@ -1814,6 +1833,7 @@ fi</string>
 			<array>
 				<string>79D2750E1E44E9480034AD54</string>
 				<string>799796391E45A3D10085862A</string>
+				<string>79A8A1E71E688C1900C8630F</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
