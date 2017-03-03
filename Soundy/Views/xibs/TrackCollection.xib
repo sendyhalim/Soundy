@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="collectionView" destination="7y4-4u-0zl" id="uhA-AZ-w3J"/>
                 <outlet property="searchTextField" destination="sOE-dj-PsM" id="ZTJ-L2-EAT"/>
+                <outlet property="trackPlayerContainer" destination="xZm-kI-PFH" id="Jqw-YM-ijG"/>
                 <outlet property="view" destination="c22-O7-iKe" id="ZxB-B2-Fi6"/>
             </connections>
         </customObject>
@@ -63,13 +64,13 @@
                                 </constraints>
                             </box>
                             <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iEu-Pn-ny2">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="235"/>
+                                <rect key="frame" x="0.0" y="60" width="480" height="175"/>
                                 <clipView key="contentView" drawsBackground="NO" id="hO9-gz-WDi">
-                                    <rect key="frame" x="0.0" y="0.0" width="480" height="235"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="480" height="175"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView id="7y4-4u-0zl">
-                                            <rect key="frame" x="0.0" y="0.0" width="480" height="265"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="480" height="205"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10000" minimumLineSpacing="10" id="oFV-qQ-CYJ">
                                                 <size key="itemSize" width="600" height="70"/>
@@ -84,10 +85,20 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="hWB-uW-N9T">
-                                    <rect key="frame" x="464" y="0.0" width="16" height="235"/>
+                                    <rect key="frame" x="464" y="0.0" width="16" height="175"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <box hidden="YES" boxType="custom" borderType="none" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="xZm-kI-PFH">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="60"/>
+                                <view key="contentView" id="KW7-hf-N8D">
+                                    <rect key="frame" x="0.0" y="0.0" width="480" height="60"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Pau-EQ-mCW"/>
+                                </constraints>
+                            </box>
                         </subviews>
                         <constraints>
                             <constraint firstItem="iEu-Pn-ny2" firstAttribute="top" secondItem="5nf-N4-cvn" secondAttribute="bottom" id="47b-yL-hfe"/>
@@ -95,8 +106,11 @@
                             <constraint firstItem="iEu-Pn-ny2" firstAttribute="leading" secondItem="goe-aD-oty" secondAttribute="leading" id="ElW-gg-TPj"/>
                             <constraint firstAttribute="trailing" secondItem="5nf-N4-cvn" secondAttribute="trailing" id="HDh-Bb-i6S"/>
                             <constraint firstItem="5nf-N4-cvn" firstAttribute="top" secondItem="goe-aD-oty" secondAttribute="top" id="Rv9-bC-ADy"/>
+                            <constraint firstItem="xZm-kI-PFH" firstAttribute="leading" secondItem="goe-aD-oty" secondAttribute="leading" id="TNa-Tx-PLA"/>
                             <constraint firstItem="iEu-Pn-ny2" firstAttribute="trailing" secondItem="goe-aD-oty" secondAttribute="trailing" id="ZAA-YN-aHR"/>
-                            <constraint firstItem="iEu-Pn-ny2" firstAttribute="bottom" secondItem="goe-aD-oty" secondAttribute="bottom" id="ryL-2u-HJb"/>
+                            <constraint firstAttribute="bottom" secondItem="xZm-kI-PFH" secondAttribute="bottom" id="bOT-dx-5tY"/>
+                            <constraint firstAttribute="trailing" secondItem="xZm-kI-PFH" secondAttribute="trailing" id="xrm-x1-bvt"/>
+                            <constraint firstItem="xZm-kI-PFH" firstAttribute="top" secondItem="iEu-Pn-ny2" secondAttribute="bottom" id="yAb-fH-EIR"/>
                         </constraints>
                     </view>
                     <color key="fillColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

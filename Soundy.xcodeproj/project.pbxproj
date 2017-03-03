@@ -436,6 +436,28 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>79963AB41E69D0A500FC8147</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>TrackPlayerController.swift</string>
+			<key>path</key>
+			<string>TrackPlayerController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>79963AB51E69D0A500FC8147</key>
+		<dict>
+			<key>fileRef</key>
+			<string>79963AB41E69D0A500FC8147</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>799796391E45A3D10085862A</key>
 		<dict>
 			<key>fileEncoding</key>
@@ -462,6 +484,7 @@
 			<array>
 				<string>79C5DB571E054A3D0028B07A</string>
 				<string>7997963C1E45A4A90085862A</string>
+				<string>79963AB41E69D0A500FC8147</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -694,6 +717,7 @@
 				<string>79DBFA8D1E37C5CD00A3B4E5</string>
 				<string>79363E741E4CEB710038D357</string>
 				<string>799F8BAD1E540B6B00E5D9B0</string>
+				<string>79963AB51E69D0A500FC8147</string>
 				<string>794F4DD51E3A6A0500480B41</string>
 				<string>79D275111E44EB850034AD54</string>
 				<string>79DBFA8B1E37C52700A3B4E5</string>

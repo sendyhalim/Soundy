@@ -5,9 +5,11 @@ import RxSwift
 class TrackCollectionViewController: NSViewController {
   @IBOutlet weak var collectionView: NSCollectionView!
   @IBOutlet weak var searchTextField: NSTextField!
+  @IBOutlet weak var trackPlayerContainer: NSBox!
 
   let collectionViewModel: TrackCollectionViewModelType
   var disposeBag = DisposeBag()
+  var trackPlayerVC: TrackPlayerController?
 
   init(viewModel: TrackCollectionViewModelType) {
     self.collectionViewModel = viewModel
@@ -68,7 +70,16 @@ extension TrackCollectionViewController: NSCollectionViewDataSource {
     ) as! TrackCell
 
     cell.setup(withViewModel: trackViewModel)
+    cell.delegate = self
 
     return cell
+  }
+}
+
+extension TrackCollectionViewController: TrackCellDelegate {
+  func playButtonToggled(viewModel: TrackViewModelType) {
+    trackPlayerVC = TrackPlayerController(viewModel: viewModel)
+    trackPlayerContainer.contentView?.addSubview(trackPlayerVC!.view)
+    trackPlayerContainer.isHidden = false
   }
 }

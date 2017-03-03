@@ -6,8 +6,7 @@ import RxCocoa
 protocol TrackViewModelType {
   var title: Driver<String> { get }
   var artworkURL: Driver<URL> { get }
-  var waveformData: Driver<Waveform> { get }
-  var barAnimation: Driver<CABasicAnimation> { get }
+  var waveform: Driver<Waveform> { get }
   var duration: Driver<String> { get }
   var playingWithDuration: Driver<Double> { get }
   var durationLeft: Driver<Double> { get }
@@ -25,7 +24,6 @@ struct TrackViewModel: TrackViewModelType {
   let musicPlayer: MusicPlayer
 
   // MARK: Input
-  private let _barAnimation = Variable<CABasicAnimation?>(nil)
   private let _playerState = Variable<PlayerState>(.stopped)
   private let _playingIcon = Variable<NSImage>(Config.Icon.play)
   private let _durationLeft: Variable<Double>
@@ -39,7 +37,7 @@ struct TrackViewModel: TrackViewModelType {
     return track.asDriver().map { $0.artworkURL ?? Track.defaultArtworkURL }
   }
 
-  var waveformData: Driver<Waveform> {
+  var waveform: Driver<Waveform> {
     return track.asDriver().flatMap {
       if self.track.value.waveform != nil {
         return Driver.just(self.track.value.waveform!)
@@ -58,13 +56,6 @@ struct TrackViewModel: TrackViewModelType {
 
       return requestWaveformDataDriver
     }
-  }
-
-  var barAnimation: Driver<CABasicAnimation> {
-    return _barAnimation
-      .asDriver()
-      .filter { $0 != nil }
-      .map { $0! }
   }
 
   var durationLeft: Driver<Double> {

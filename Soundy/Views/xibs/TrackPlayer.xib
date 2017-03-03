@@ -7,18 +7,79 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-2" userLabel="File's Owner" customClass="TrackPlayerController" customModule="Soundy" customModuleProvider="target">
+            <connections>
+                <outlet property="barContainerView" destination="Ei4-UB-Icm" id="THd-Fc-piU"/>
+                <outlet property="nextSongButton" destination="YDZ-3H-DAu" id="gLt-j2-kdk"/>
+                <outlet property="previousSongButton" destination="VFj-uA-691" id="bdO-3m-CME"/>
+                <outlet property="togglePlayButton" destination="IGs-Tc-MMR" id="MkL-24-vqC"/>
+                <outlet property="view" destination="c22-O7-iKe" id="cXT-xb-H09"/>
+            </connections>
+        </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="c22-O7-iKe">
-            <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+            <rect key="frame" x="0.0" y="0.0" width="617" height="60"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <box boxType="custom" borderType="none" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="MNF-pD-XGo">
-                    <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+                    <rect key="frame" x="0.0" y="0.0" width="617" height="60"/>
                     <view key="contentView" id="Txc-xC-abQ">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+                        <rect key="frame" x="0.0" y="0.0" width="617" height="60"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VFj-uA-691">
+                                <rect key="frame" x="20" y="15" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="hGK-Jp-ZIw"/>
+                                    <constraint firstAttribute="width" constant="30" id="oO3-Q1-cG8"/>
+                                </constraints>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Previous" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="OZh-uW-x7Q">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IGs-Tc-MMR">
+                                <rect key="frame" x="65" y="15" width="30" height="30"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Play" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="n2j-cA-6Qe">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YDZ-3H-DAu">
+                                <rect key="frame" x="110" y="15" width="30" height="30"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Next" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Zhb-zH-U25">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <box boxType="custom" borderType="none" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="Ei4-UB-Icm">
+                                <rect key="frame" x="155" y="10" width="400" height="50"/>
+                                <view key="contentView" id="MEh-0g-49d">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="Sr4-HE-VHO"/>
+                                </constraints>
+                                <color key="fillColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </box>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Ei4-UB-Icm" firstAttribute="leading" secondItem="YDZ-3H-DAu" secondAttribute="trailing" constant="15" id="5TA-Rt-le5"/>
+                            <constraint firstItem="IGs-Tc-MMR" firstAttribute="leading" secondItem="VFj-uA-691" secondAttribute="trailing" constant="15" id="6kB-Mi-Mhw"/>
+                            <constraint firstItem="VFj-uA-691" firstAttribute="centerY" secondItem="Txc-xC-abQ" secondAttribute="centerY" id="7xw-FR-Vzt"/>
+                            <constraint firstItem="YDZ-3H-DAu" firstAttribute="height" secondItem="IGs-Tc-MMR" secondAttribute="height" id="Fjs-iR-GxC"/>
+                            <constraint firstItem="IGs-Tc-MMR" firstAttribute="height" secondItem="VFj-uA-691" secondAttribute="height" id="RcE-kb-UGL"/>
+                            <constraint firstItem="IGs-Tc-MMR" firstAttribute="baseline" secondItem="VFj-uA-691" secondAttribute="baseline" id="Sif-cB-VpJ"/>
+                            <constraint firstItem="IGs-Tc-MMR" firstAttribute="width" secondItem="VFj-uA-691" secondAttribute="width" id="TBv-Z6-s4c"/>
+                            <constraint firstItem="YDZ-3H-DAu" firstAttribute="width" secondItem="IGs-Tc-MMR" secondAttribute="width" id="UKd-qf-3cD"/>
+                            <constraint firstItem="YDZ-3H-DAu" firstAttribute="baseline" secondItem="IGs-Tc-MMR" secondAttribute="baseline" id="UZZ-6q-jNe"/>
+                            <constraint firstAttribute="bottom" secondItem="Ei4-UB-Icm" secondAttribute="bottom" constant="10" id="WDS-V4-rf8"/>
+                            <constraint firstItem="VFj-uA-691" firstAttribute="leading" secondItem="Txc-xC-abQ" secondAttribute="leading" constant="20" symbolic="YES" id="cc2-a2-8g3"/>
+                            <constraint firstItem="YDZ-3H-DAu" firstAttribute="leading" secondItem="IGs-Tc-MMR" secondAttribute="trailing" constant="15" id="enW-rS-NNa"/>
+                            <constraint firstItem="Ei4-UB-Icm" firstAttribute="top" secondItem="Txc-xC-abQ" secondAttribute="top" id="huE-6K-w5I"/>
+                        </constraints>
                     </view>
                     <color key="fillColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </box>
@@ -29,6 +90,12 @@
                 <constraint firstItem="MNF-pD-XGo" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="g7u-ws-cDo"/>
                 <constraint firstAttribute="trailing" secondItem="MNF-pD-XGo" secondAttribute="trailing" id="wTN-L4-dKv"/>
             </constraints>
+            <point key="canvasLocation" x="207.5" y="82"/>
         </customView>
     </objects>
+    <resources>
+        <image name="Next" width="100" height="100"/>
+        <image name="Play" width="100" height="100"/>
+        <image name="Previous" width="100" height="100"/>
+    </resources>
 </document>

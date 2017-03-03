@@ -10,6 +10,7 @@ protocol TrackCollectionViewModelType {
 
   func viewModel(at index: Int) -> TrackViewModelType
   func search(term: String) -> Disposable
+  func loadMore()
 }
 
 struct TrackCollectionViewModel: TrackCollectionViewModelType {
@@ -54,5 +55,28 @@ struct TrackCollectionViewModel: TrackCollectionViewModelType {
       .bindTo(_viewModels)
 
     return CompositeDisposable(fetchingDisposable, resultDisposable)
+  }
+
+  func loadMore() {
+//    let user = User(
+//      id: 300,
+//      avatarURL: URL(string: "https://avatars1.githubusercontent.com/u/3948217?v=3&s=460")!,
+//      profileURL: URL(string: "https://github.com/sendyhalim")!,
+//      username: "test username"
+//    )
+//    let track = Track(
+//      id: 100,
+//      user: user,
+//      title: "test track",
+//      artworkURL: nil,
+//      streamURL: URL(string: "https://i1.sndcdn.com/artworks-000118272430-2uofaw-large.jpg")!,
+//      waveformURL: URL(string: "https://w1.sndcdn.com/Pm8iUvAq0PCl_m.png")!,
+//      duration: 238076,
+//      playbackCount: 100
+//    )
+//
+//    let vm = TrackViewModel(track: track)
+//
+//    _viewModels.value = _viewModels.value.append(List(arrayLiteral: vm))
   }
 }
