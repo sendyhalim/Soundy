@@ -24,8 +24,15 @@ class TrackCollectionViewController: NSViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     collectionView.dataSource = self
+    collectionView.delegate = self
 
     setupBindings()
+  }
+
+  override func viewWillLayout() {
+    super.viewWillLayout()
+    collectionView.collectionViewLayout?.invalidateLayout()
+
   }
 
   func setupBindings() {
@@ -73,6 +80,16 @@ extension TrackCollectionViewController: NSCollectionViewDataSource {
     cell.delegate = self
 
     return cell
+  }
+}
+
+extension TrackCollectionViewController: NSCollectionViewDelegateFlowLayout {
+  func collectionView(
+    _ collectionView: NSCollectionView,
+    layout collectionViewLayout: NSCollectionViewLayout,
+    sizeForItemAt indexPath: IndexPath
+  ) -> NSSize {
+    return CGSize(width: collectionView.bounds.width, height: 70)
   }
 }
 
